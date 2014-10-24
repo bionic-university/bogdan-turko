@@ -6,6 +6,7 @@
  * Time: 08:22 AM
  */
     include 'vendor/autoload.php';
+
     use CsvParse\Config\Config;
     use CsvParse\Parse\Parse;
     use CsvParse\Shows\Shows;
@@ -14,15 +15,14 @@
     $csv = new Parse;
     $sh = new Shows;
 
-    $params = $config->ValidateArgs($argv);
+    $params = $config->validateArgs($argv);
 
-    echo "*******************************\r\n";
-    echo "Reading file: ".$params->file_path."\r\n";
-    echo "Delimeter: '".$params->delimeter."'\r\n";
-    echo "*******************************\r\n";
+    echo "*******************************". PHP_EOL;
+    echo "Reading file: ".$params->file_path . PHP_EOL;
+    echo "Delimeter: '".$params->delimeter . PHP_EOL;
+    echo "*******************************" . PHP_EOL;
 
     $mas = $csv->readFile($params->file_path, $params->delimeter);
 
-    $sh->showCsv($mas);
+    $sh->printCsv($mas);
 
-?>

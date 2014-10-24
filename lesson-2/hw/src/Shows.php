@@ -7,17 +7,16 @@
  */
  namespace CsvParse\Shows;
 
-class Shows {
-
-    public function showCsv($mas)
+class Shows
+{
+    public function printCsv($mas)
     {
         for ($j=0; $j<count($mas); $j++){
 
             for ($k=0; $k<count($mas[$j]); $k++) {
                 print $mas[$j][$k]." ";
             }
-            echo "\r\n";
+            echo PHP_EOL;
         }
     }
-
 }

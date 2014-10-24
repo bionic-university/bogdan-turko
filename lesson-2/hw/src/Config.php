@@ -7,14 +7,14 @@
  */
  namespace CsvParse\Config;
 
-class Config {
-
+class Config
+{
     public $delimeter = ";";
     public $file_path = "";
-    public function ValidateArgs($args)
+    public function validateArgs($args)
     {
         if(sizeof($args)===1){
-            die("Plese, specify in the argument of the path and file name\r\n");
+            die("Plese, specify in the argument of the path and file name" . PHP_EOL);
         }
         else{
             $this->file_path = $args[1];
@@ -25,11 +25,6 @@ class Config {
         else{
             $this->delimeter = $args[2];
         }
-        echo "*******************************\r\n";
-        echo "Reading file: ".$this->file_path."\r\n";
-        echo "Delimeter: '".$this->delimeter."'\r\n";
-        echo "*******************************\r\n";
-        return $this;
+         return $this;
     }
-
 }

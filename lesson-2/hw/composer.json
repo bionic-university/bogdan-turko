@@ -5,8 +5,7 @@
     "autoload": {
         "psr-4": {
             "CsvParse\\Config\\": "src/",
-            "CsvParse\\Parse\\": "src/",cd ../../
-
+            "CsvParse\\Parse\\": "src/",
             "CsvParse\\Shows\\": "src/"
         }
     }

@@ -7,7 +7,8 @@
  */
  namespace CsvParse\Parse;
 
-class Parse {
+class Parse
+{
 
     public $max_content_len = 1000;
     public function readFile($file_path, $delimeter)
@@ -18,7 +19,6 @@ class Parse {
             for ($i=0; $data=fgetcsv($f, $this->max_content_len, $delimeter); $i++) {
 
                 $mas[$i] = $data;
-                //var_dump($mas[$i]);
             }
             fclose($f);
         }
@@ -27,5 +27,4 @@ class Parse {
         }
         return $mas;
     }
-
 }

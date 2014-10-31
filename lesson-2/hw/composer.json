@@ -1,4 +1,10 @@
 {
+    "authors": [
+        {
+            "name": "Lesson-3",
+            "email": "bogdan.turko@gmail.com"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "CsvParse\\Config\\": "src/",

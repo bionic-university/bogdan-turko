@@ -9,5 +9,5 @@
 namespace Seller\Cache;
 
 interface rentingCountInterface {
-    function getRent($cost, $pay);
+    function getRent($currency);
 } 

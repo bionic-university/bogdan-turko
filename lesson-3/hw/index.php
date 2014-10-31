@@ -11,39 +11,11 @@
     use Seller\Cache\Cache;
     use Seller\Cache\Coloring;
 
-    $colors = new Coloring();
     $cache = new Cache;
+    $colors = new Coloring();
 
-    echo $colors->getColoredString("Input payment amount: ", "green");
-    $f = fopen('php://stdin', 'r');
-    $input = fgets($f, 10);
-    fclose($f);
-    $cost = (float)$input;
-
-    if($cost > 1){
-
-    }
-    else{
-        echo $colors->getColoredString("Please input correct number!", "red").PHP_EOL; die;
-    }
+    if(count($argv) < 2) $argv[1]="UAH";
+    $currency = $argv[1];
 
 
-    if(is_float($cost)==false){
-
-    }
-
-    echo $colors->getColoredString("Input amount of money received: ", "green");
-    $f = fopen('php://stdin', 'r');
-    $input = fgets($f, 10);
-    fclose($f);
-    $pay = (float)$input;
-
-    if($cost > 1){
-
-    }
-    else{
-        echo $colors->getColoredString("Please input correct number!", "red").PHP_EOL; die;
-    }
-
-    echo $colors->getColoredString("Result: ", "brown").PHP_EOL;
-    echo $colors->getColoredString($cache->getRent($cost, $pay), "green");
+    echo $colors->getColoredString($cache->getRent($currency), "green");

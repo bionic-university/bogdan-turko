@@ -17,9 +17,14 @@ bogdan-turko
 сколько купюр и каких номиналов будет выданo.
 ### Usage
 > ### Run in command line example:
-#### php index.php
+#### php index.php [optional currency]
 #### Input payment amount: 9000
 #### Input amount of money received: 100000
 #### Result: 
 #### 500 -> x182
 
+currency: USD, RUR, UAH (default)
+
+####restrictions: 
+####Only integer values
+####Minimal banknot value = 1

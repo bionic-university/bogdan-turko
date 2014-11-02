@@ -1,21 +1,19 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: *buntu
- * Date: 10/30/14
- * Time: 11:39 AM
- * Original from: http://www.if-not-true-then-false.com/
- */
 
 namespace Seller\Cache;
 
-
+/**
+ * Class Coloring
+ * @package Seller\Cache
+ */
 	class Coloring {
         private $foreground_colors = array();
         private $background_colors = array();
 
+        /**
+         * Set up shell colors
+         */
         public function __construct() {
-            // Set up shell colors
             $this->foreground_colors['black'] = '0;30';
             $this->foreground_colors['dark_gray'] = '1;30';
             $this->foreground_colors['blue'] = '0;34';

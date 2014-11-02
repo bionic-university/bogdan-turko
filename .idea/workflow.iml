@@ -10,9 +10,11 @@
       <library name="PHARS">
         <CLASSES>
           <root url="phar://$MODULE_DIR$/lesson-2/hw/composer.phar" />
+          <root url="phar://$MODULE_DIR$/lesson-3/hw/composer.phar" />
         </CLASSES>
         <SOURCES>
           <root url="phar://$MODULE_DIR$/lesson-2/hw/composer.phar" />
+          <root url="phar://$MODULE_DIR$/lesson-3/hw/composer.phar" />
         </SOURCES>
       </library>
     </orderEntry>

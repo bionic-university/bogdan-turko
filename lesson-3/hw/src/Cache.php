@@ -1,61 +1,52 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: *buntu
- * Date: 10/27/14
- * Time: 2:03 PM
- */
 
     namespace Seller\Cache;
 
+    /**
+     * Class Cache
+     * @package Seller\Cache
+     */
     class Cache extends Currencies implements rentingCountInterface, validateInterface{
 
         private $curr = "";
         private $cur_curr = 0;
         private $refund_array = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
+        /**
+         * @return float
+         */
         public function validateInput(){
-            $colors = new Coloring();
             $f = fopen('php://stdin', 'r');
             $input = fgets($f, 10);
             fclose($f);
             $value = (float)$input;
 
-            if($value > 1){
-            }
-            else{
-                echo $colors->getColoredString("Please input correct number!", "red").PHP_EOL; die;
+            if($value < 1){
+                throw new \InvalidArgumentException("Please input correct number!");
             }
             return $value;
         }
-        public function getRent( $currency){
 
+        /**
+         * @param $currency
+         * @return int
+         */
+        public function getRent( $currency ){
 
             $colors = new Coloring();
 
             echo $colors->getColoredString("Input payment amount: ", "green");
             $cost = $this->validateInput();
 
-
-
-
             echo $colors->getColoredString("Input amount of money received: ", "green");
             $pay = $this->validateInput();
-            /*$f = fopen('php://stdin', 'r');
-            $input = fgets($f, 10);
-            fclose($f);
-            $pay = (float)$input;
 
-            if($cost > 1){
-
+            if($pay < $cost){
+                throw new \InvalidArgumentException("'Amount of Money' must be greater or equal to 'Payment Amount'!");
             }
-            else{
-                echo $colors->getColoredString("Please input correct number!", "red").PHP_EOL; die;
-            }*/
-
 
             $refund = $pay - $cost;
-            $result = 0;
+            $result = "";
             $this->curr = $this->getCurrency($currency);
             $this->cur_curr = count($this->curr)-1;
 
@@ -71,10 +62,9 @@
             echo $colors->getColoredString("Result: ", "brown").PHP_EOL;
             foreach($this->refund_array as $key => $value){
                 if($value > 0) {
-                    echo $this->curr[$key]." -> x".$value.PHP_EOL;
+                    $result .= $this->curr[$key]." -> x".$value.PHP_EOL;
                 }
             }
-
 
             return $result;
         }

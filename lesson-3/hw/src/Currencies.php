@@ -1,17 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ebuntu
- * Date: 10/31/14
- * Time: 2:16 PM
- */
 
 namespace Seller\Cache;
 
 
 class Currencies {
-    //public $curr = ;
 
+    /**
+     * @param $curr
+     * @return array
+     */
     public function getCurrency($curr){
         switch ($curr){
             case "USD":
